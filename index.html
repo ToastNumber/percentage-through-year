@@ -14,7 +14,7 @@ function updatePercentage() {
     var milliSecondsIntoYear = now.getTime() - startOfYearMillis;
     var milliSecondsInYear = nextYearMillis - startOfYearMillis;
     var progress = 100. * (now.getTime() - startOfYearMillis) / (nextYearMillis - startOfYearMillis);
-    t.textContent = "We are " + progress.toFixed(6) + "%" + " through the year";
+    t.textContent = "We are " + progress.toFixed(6) + "%" + " through " + now.getFullYear();
 }
 
 updatePercentage();
