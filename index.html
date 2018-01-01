@@ -1,0 +1,19 @@
+<h1 id="time"></h1>
+
+<script type="text/javascript">
+prefix = "We are "
+t = document.getElementById("time");
+
+function updatePercentage() {
+    var now = new Date();
+    var startOfYearMillis = new Date(now.getFullYear(), 0, 1, 0, 0, 0, 0).getTime();
+    var nextYearMillis  = new Date(now.getFullYear() + 1, 0, 1, 0, 0, 0, 0).getTime();
+    var milliSecondsIntoYear = now.getTime() - startOfYearMillis;
+    var milliSecondsInYear = nextYearMillis - startOfYearMillis;
+    var progress = 100. * (now.getTime() - startOfYearMillis) / (nextYearMillis - startOfYearMillis);
+    t.textContent = "We are " + progress.toFixed(6) + "%" + " through the year";
+}
+
+updatePercentage();
+setInterval(updatePercentage, 1000);
+</script>
